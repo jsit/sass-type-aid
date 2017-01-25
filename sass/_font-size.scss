@@ -1,0 +1,22 @@
+/// Font Size
+/// @param {int} $scale [0] Scale
+/// @group Typography
+/// @require {mixin} modular-scale From [Bourbon](http://bourbon.io/)
+/// Set font size according to a modular scale
+@mixin font-size($scale: 0) {
+
+	$em-base: 16px !default;
+
+	@if function-exists(modular-scale) {
+
+		font-size: modular-scale($scale, $em-base);
+		font-size: modular-scale($scale, 1rem);
+
+	} @else {
+
+		@error "Mixin 'modular-scale' not found; try importing Bourbon.";
+
+	}
+
+}
+

@@ -1,0 +1,16 @@
+/// Rhythm
+/// @param {string} $property Property to set, e.g. `margin-bottom`
+/// @param {int} $steps Number of lines to use in measurement
+/// @group Typography
+/// Set property to some size value based on base line height
+/// For instance:
+///     @include rhythm(margin-bottom, 1)
+/// will add a margin-bottom 
+@mixin rhythm($property, $steps: 1) {
+
+	$em-base: 16px !default;
+
+  #{$property}: $base-line-height * $steps * $em-base;
+  #{$property}: #{$base-line-height * $steps}rem;
+
+}

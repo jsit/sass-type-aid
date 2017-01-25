@@ -1,0 +1,32 @@
+/// Rhythm Line Height
+/// @param {px} $font-size Font size of element, in px
+/// @param {px} $base-font-size Base font size, in px, if not set
+/// @param {num} $line-height Base line height, in unitless, if not set
+/// @group Typography
+/// Set line height to be in rhythm with line height of base font size
+/// For instance:
+///     line-height: new-line-height(24px)
+/// should be used for fonts of size 24px, and will result in a line height of
+/// 
+@mixin rhythm-line-height($font-size, $base-font-size: null, $line-height: null) {
+
+  $em-base: 16px !default;
+  $base-font-size: $em-base !default;
+
+  $base-line-height: 1.4 !default;
+  $line-height: $base-line-height !default;
+
+  $line-count: round($font-size / ($base-font-size * $line-height));
+
+  $new-line-height: 0;
+  $i: 0;
+  @while $new-line-height < 1 {
+    $full-height: ($line-count + $i) * $base-font-size * $line-height;
+    $new-line-height: $full-height / $font-size;
+    $i: $i + 1;
+  }
+
+  line-height: $new-line-height;
+
+}
+
