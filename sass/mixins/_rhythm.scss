@@ -8,6 +8,7 @@
 /// will add a margin-bottom 
 @mixin rhythm($property, $steps: 1) {
 
+	$base-line-height: 1.4 !default;
 	$em-base: 16px !default;
 
   #{$property}: $base-line-height * $steps * $em-base;
