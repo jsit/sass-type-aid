@@ -11,7 +11,7 @@
 	$base-line-height: 1.4 !default;
 	$em-base: 16px !default;
 
-  #{$property}: $base-line-height * $steps * $em-base;
-  #{$property}: #{$base-line-height * $steps}rem;
+	#{$property}: $base-line-height * $steps * $em-base;
+	#{$property}: #{$base-line-height * $steps}rem;
 
 }

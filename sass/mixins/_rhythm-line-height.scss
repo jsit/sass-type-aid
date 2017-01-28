@@ -10,23 +10,23 @@
 /// 
 @mixin rhythm-line-height($font-size, $base-font-size: null, $line-height: null) {
 
-  $em-base: 16px !default;
-  $base-font-size: $em-base !default;
+	$em-base: 16px !default;
+	$base-font-size: $em-base !default;
 
-  $base-line-height: 1.4 !default;
-  $line-height: $base-line-height !default;
+	$base-line-height: 1.4 !default;
+	$line-height: $base-line-height !default;
 
-  $line-count: round($font-size / ($base-font-size * $line-height));
+	$line-count: round($font-size / ($base-font-size * $line-height));
 
-  $new-line-height: 0;
-  $i: 0;
-  @while $new-line-height < 1 {
-    $full-height: ($line-count + $i) * $base-font-size * $line-height;
-    $new-line-height: $full-height / $font-size;
-    $i: $i + 1;
-  }
+	$new-line-height: 0;
+	$i: 0;
+	@while $new-line-height < 1 {
+		$full-height: ($line-count + $i) * $base-font-size * $line-height;
+		$new-line-height: $full-height / $font-size;
+		$i: $i + 1;
+	}
 
-  line-height: $new-line-height;
+	line-height: $new-line-height;
 
 }
 
