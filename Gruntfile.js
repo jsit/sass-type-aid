@@ -9,6 +9,9 @@ module.exports = function(grunt) {
 				options: {
 					dest: 'docs/sass',
 					theme: 'flippant',
+          display: {
+            access: 'public'
+          },
 				}
 			}
 		},
@@ -16,7 +19,7 @@ module.exports = function(grunt) {
 			expanded: {
 				options: {
 					style: 'expanded',
-					sourcemap: true
+					sourcemap: true,
 				},
 				files: {
 					'example.css': 'example.scss'

@@ -6,9 +6,13 @@
 @import 'mixins/rhythm-line-height';
 @import 'mixins/rhythm';
 
+/// Whether to show visible baseline grid
+/// @group Options
 $show-baseline-grid: false !default;
 $base-line-height: 1.4 !default;
 
+/// Offset for baseline grid (if visible)
+/// @group Options
 $baseline-grid-offset: 0 !default;
 
 $height: $em-base * $base-line-height;
@@ -27,5 +31,12 @@ $height: $em-base * $base-line-height;
 		background-position: 0 $baseline-grid-offset;
 		background-size: 100% $height;
 		content: '';
+    z-index: -1;
 	}
+}
+
+/// Show highlight behind text
+/// @group Typography
+@mixin highlight {
+  background-color: rgba(255, 0, 255, 0.1);
 }

@@ -1,8 +1,5 @@
-/// Rhythm Line Height<br>
-/// Set line height to be in rhythm with line height of base font size<br>
-/// For instance:<br>
-/// `line-height: rhythm-line-height(24px)`<br>
-/// should be used for fonts of size 24px, and will result in a line height of
+/// Set line height to be in rhythm with line height of base font size.<br>
+/// Line height is set at the smallest line-height greater than 1.<br>
 /// @param {px}  $font-size      Font size of element, in px
 /// @param {px}  $base-font-size Base font size, in px, if not set
 /// @param {num} $line-height    Base line height, in unitless, if not set
@@ -11,6 +8,11 @@
 /// h4 {
 ///   font-size: 24px;
 ///   @include rhythm-line-height(24px);
+/// }
+/// @example css - Output
+/// h4 {
+///   font-size: 24px;
+///   line-height: 1.1666666667;
 /// }
 @mixin rhythm-line-height($font-size, $base-font-size: null, $line-height: null) {
 
@@ -31,9 +33,6 @@
 	}
 
 	line-height: $new-line-height;
-
-	$offset: baseline-offset($base-font-size $line-height, $font-size $new-line-height);
-	transform: translateY($offset);
 
 }
 

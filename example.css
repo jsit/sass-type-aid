@@ -8,9 +8,10 @@ body::after {
   min-height: 100vh;
   background-image: linear-gradient(to bottom, transparent 0, transparent 27px, #99ffff 27px, #99ffff 28px);
   background-repeat: repeat-y;
-  background-position: 0 -6px;
+  background-position: 0 -0.3rem;
   background-size: 100% 28px;
-  content: ''; }
+  content: '';
+  z-index: -1; }
 
 p, ul, ol, h1, h2, h3, h4, h5, h6, blockquote {
   margin: 0; }
@@ -25,7 +26,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: Arial;
+  font-family: 'Helvetica Neue';
   line-height: 1.4; }
 
 p {
@@ -36,17 +37,15 @@ h1 {
   font-size: 112.204659498px;
   font-size: 5.6102329749rem;
   line-height: 1.2477200201;
-  transform: translateY(43.2137688173px);
+  margin: 0;
   margin-bottom:  28px;
-  margin-bottom:  1.4rem;
-  position: relative;
-  top: -0.1em; }
+  margin-bottom:  1.4rem; }
 
 h2 {
   font-size: 84.1745382584px;
   font-size: 4.2087269129rem;
   line-height: 1.3305686294;
-  transform: translateY(31.5887988126px);
+  margin: 0;
   margin-bottom:  28px;
   margin-bottom:  1.4rem; }
 
@@ -54,27 +53,27 @@ h3 {
   font-size: 63.1466903664px;
   font-size: 3.1573345183rem;
   line-height: 1.3302359872;
-  transform: translateY(21.1192039105px); }
+  margin: 0; }
 
 h4 {
-  font-size: 47.37186074px;
-  font-size: 2.368593037rem;
-  line-height: 1.1821363807;
-  transform: translateY(11.5163570221px); }
+  font-size: 24px;
+  line-height: 1.1666666667; }
 
 h5 {
   font-size: 35.53778px;
   font-size: 1.776889rem;
   line-height: 1.5757877954;
-  transform: translateY(9.5637337px); }
+  margin: 0; }
 
 h6 {
   font-size: 26.66px;
   font-size: 1.333rem;
   line-height: 1.0502625656;
-  transform: translateY(1.0989px); }
+  margin: 0; }
 
 blockquote {
   font-size: 36px;
-  line-height: 1.5555555556;
-  transform: translateY(9.64px); }
+  line-height: 1.5555555556; }
+
+.highlight {
+  background-color: rgba(255, 0, 255, 0.1); }

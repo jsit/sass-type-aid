@@ -1,9 +1,13 @@
-/// Font Size
-/// Set font size according to a modular scale
+/// Set font size and line height according to a modular scale.<br>
+/// Line height is set at the smallest line-height greater than 1.<br>
+/// `margin` is reset to `0`. Set with `rhythm()` or manually.
 /// @param {int} $scale [0] Scale
+/// @param {num} $modular-scale-ratio [0] Modular scale ratio
+/// @param {num} $modular-scale-base [0] Modular scale base
 /// @group Typography
 /// @require {mixin} modular-scale From [Bourbon](http://bourbon.io/)
-@mixin font-size($scale: 0, $modular-scale-ratio: $modular-scale-ratio, $modular-scale-base: $modular-scale-base) {
+/// @require {mixin} rhythm-line-height
+@mixin rhythm-font-size($scale: 0, $modular-scale-ratio: $modular-scale-ratio, $modular-scale-base: $modular-scale-base) {
 
 	$em-base: 16px !default;
 
@@ -15,6 +19,8 @@
 	}
 
 	@include rhythm-line-height(modular-scale($scale, $em-base));
+
+  margin: 0;
 
 }
 

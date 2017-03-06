@@ -1,16 +1,12 @@
 $show-baseline-grid: true;
 $em-base: 20px;
-$baseline-grid-offset: -6px;
+$baseline-grid-offset: (-6/20) * 1rem;
 
 @import 'sass/type-aid';
 
 p, ul, ol, h1, h2, h3, h4, h5, h6, blockquote {
 	margin: 0;
 }
-
-
-
-
 
 html {
 	height: 100%;
@@ -23,7 +19,7 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	font-family: Arial;
+	font-family: 'Helvetica Neue';
 	line-height: $base-line-height;
 }
 
@@ -32,34 +28,37 @@ p {
 }
 
 h1 {
-	@include font-size(6);
+	@include rhythm-font-size(6);
 	@include rhythm(margin-bottom);
-	position: relative;
-	top: -0.1em;
 }
 
 h2 {
-	@include font-size(5);
+	@include rhythm-font-size(5);
 	@include rhythm(margin-bottom);
 }
 
 h3 {
-	@include font-size(4);
+	@include rhythm-font-size(4);
 }
 
 h4 {
-	@include font-size(3);
+  font-size: 24px;
+  @include rhythm-line-height(24px);
 }
 
 h5 {
-	@include font-size(2);
+	@include rhythm-font-size(2);
 }
 
 h6 {
-	@include font-size(1);
+	@include rhythm-font-size(1);
 }
 
 blockquote {
 	font-size: 36px;
 	@include rhythm-line-height(36px);
+}
+
+.highlight {
+  @include highlight;
 }
