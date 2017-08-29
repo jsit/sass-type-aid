@@ -9,9 +9,11 @@ module.exports = function(grunt) {
 				options: {
 					dest: 'docs',
 					theme: 'flippant',
-          display: {
-            access: 'public'
-          },
+					display: {
+						access: 'public'
+					},
+					descriptionPath: './README.md',
+					package: './package.json',
 				}
 			}
 		},
