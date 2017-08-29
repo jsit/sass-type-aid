@@ -1,4 +1,9 @@
 {
+	"title": "Sass Type Aid",
+	"homepage": "https://jsit.github.io/sass-type-aid",
+	"description": "scss mixins to help with typographic rhythms etc.",
+	"basePath": "https://github.com/jsit/sass-type-aid/tree/master",
+	"version": "0.1",
   "engines": {
     "node": ">= 0.10.0"
   },
