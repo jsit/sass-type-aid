@@ -20,6 +20,9 @@ module.exports = function(grunt) {
 				options: {
 					style: 'expanded',
 					sourcemap: true,
+					includePaths: [
+						'bower_components',
+					],
 				},
 				files: {
 					'example.css': 'example.scss'
