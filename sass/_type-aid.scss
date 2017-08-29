@@ -5,9 +5,8 @@
 @import 'mixins/rhythm';
 
 /// Whether to show visible baseline grid
-/// @group Options
+/// @group Debugging
 $show-baseline-grid: false !default;
-$base-line-height: 1.4 !default;
 
 /// Offset for baseline grid (if visible) (deprecated)
 /// @access private
@@ -51,7 +50,7 @@ $_height: $em-base * $base-line-height;
 }
 
 /// Show highlight behind text
-/// @group Typography
+/// @group Debugging
 @mixin highlight {
   background-color: rgba(255, 0, 255, 0.1);
 }
