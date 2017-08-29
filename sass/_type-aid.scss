@@ -5,31 +5,38 @@
 @import 'mixins/rhythm';
 
 /// Minimum line height when automatically set
+/// @type Number
 /// @group 1options
 $min-line-height: 1 !default;
 
 /// Whether to show visible baseline grid
+/// @type Bool
 /// @group 3debugging
 $show-baseline-grid: false !default;
 
 /// Offset for baseline grid (if visible) (deprecated)
+/// @type Number
 /// @access private
 /// @group 1options
 $_baseline-grid-offset: 0 !default;
 
-/// em base: base font size in px
+/// Base font size in px
+/// @type String
 /// @group 1options
 $em-base: 16px !default;
 
 /// Base line height, unitless
+/// @type Number
 /// @group 1options
 $base-line-height: 1.4 !default;
 
 /// [Modular scale](http://modularscale.com/) ratio
+/// @type Number
 /// @group 1options
 $modular-scale-ratio: 1.2 !default;
 
-/// [Modular scale](http://modularscale.com/) base: Size on which to base modular scale sizes
+/// Size on which to base modular scale sizes
+/// @type String
 /// @group 1options
 $modular-scale-base: em($em-base) !default;
 
