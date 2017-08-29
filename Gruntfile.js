@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 			default: {
 				src: 'sass',
 				options: {
-					dest: 'docs/sass',
+					dest: 'docs',
 					theme: 'flippant',
           display: {
             access: 'public'
