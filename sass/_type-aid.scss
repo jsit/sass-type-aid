@@ -5,32 +5,32 @@
 @import 'mixins/rhythm';
 
 /// Minimum line height when automatically set
-/// @group Options
+/// @group 1options
 $min-line-height: 1 !default;
 
 /// Whether to show visible baseline grid
-/// @group Debugging
+/// @group 3debugging
 $show-baseline-grid: false !default;
 
 /// Offset for baseline grid (if visible) (deprecated)
 /// @access private
-/// @group Options
+/// @group 1options
 $_baseline-grid-offset: 0 !default;
 
 /// em base: base font size in px
-/// @group Options
+/// @group 1options
 $em-base: 16px !default;
 
 /// Base line height, unitless
-/// @group Options
+/// @group 1options
 $base-line-height: 1.4 !default;
 
 /// [Modular scale](http://modularscale.com/) ratio
-/// @group Options
+/// @group 1options
 $modular-scale-ratio: 1.2 !default;
 
 /// [Modular scale](http://modularscale.com/) base: Size on which to base modular scale sizes
-/// @group Options
+/// @group 1options
 $modular-scale-base: em($em-base) !default;
 
 $_height: $em-base * $base-line-height;
@@ -54,7 +54,7 @@ $_height: $em-base * $base-line-height;
 }
 
 /// Show highlight behind text
-/// @group Debugging
+/// @group 3debugging
 @mixin highlight {
   background-color: rgba(255, 0, 255, 0.1);
 }

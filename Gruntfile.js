@@ -14,6 +14,11 @@ module.exports = function(grunt) {
 					},
 					descriptionPath: './README.md',
 					package: './package.json',
+					groups: {
+						'1options': 'Options',
+						'2typography': 'Typography',
+						'3debugging': 'Debugging',
+					},
 				}
 			}
 		},
