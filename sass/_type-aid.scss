@@ -4,6 +4,10 @@
 @import 'mixins/rhythm-line-height';
 @import 'mixins/rhythm';
 
+/// Minimum line height when automatically set
+/// @group Options
+$min-line-height: 1 !default;
+
 /// Whether to show visible baseline grid
 /// @group Debugging
 $show-baseline-grid: false !default;

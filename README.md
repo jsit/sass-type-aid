@@ -11,7 +11,7 @@ scss mixins to help with typographic rhythms etc.
 
 ## Font size
 
-When setting font sizes, use the `rhythm-font-size` mixin, passing a unitless parameter that will increase the font size that number of steps on the modular scale. For instance:
+When setting font sizes, use the `rhythm-font-size` mixin, passing a unitless parameter that will increase the font size that number of steps on the modular scale. The `line-height` will also be set to an amount (not smaller than `$min-line-height` that maintains vertical rhythm. For instance:
 
 **Input**
 ```scss

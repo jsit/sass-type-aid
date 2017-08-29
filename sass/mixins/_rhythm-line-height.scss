@@ -25,7 +25,7 @@
 
 	$new-line-height: 0;
 	$i: 0;
-	@while $new-line-height < 1 {
+	@while $new-line-height < $min-line-height {
 		$full-height: ($line-count + $i) * $base-font-size * $line-height;
 		$new-line-height: $full-height / $font-size;
 		$i: $i + 1;
