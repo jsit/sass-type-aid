@@ -1,6 +1,6 @@
 @import '../../bourbon/app/assets/stylesheets/bourbon';
 
-@import 'mixins/font-size';
+@import 'mixins/rhythm-font-size';
 @import 'mixins/rhythm-line-height';
 @import 'mixins/rhythm';
 
@@ -9,11 +9,28 @@
 $show-baseline-grid: false !default;
 $base-line-height: 1.4 !default;
 
-/// Offset for baseline grid (if visible)
+/// Offset for baseline grid (if visible) (deprecated)
+/// @access private
 /// @group Options
-$baseline-grid-offset: 0 !default;
+$_baseline-grid-offset: 0 !default;
 
-$height: $em-base * $base-line-height;
+/// em base: base font size in px
+/// @group Options
+$em-base: 16px !default;
+
+/// Base line height, unitless
+/// @group Options
+$base-line-height: 1.4 !default;
+
+/// [Modular scale](http://modularscale.com/) ratio
+/// @group Options
+$modular-scale-ratio: 1.2 !default;
+
+/// [Modular scale](http://modularscale.com/) base: Size on which to base modular scale sizes
+/// @group Options
+$modular-scale-base: em($em-base) !default;
+
+$_height: $em-base * $base-line-height;
 
 @if $show-baseline-grid {
 	body::after {
@@ -24,17 +41,16 @@ $height: $em-base * $base-line-height;
 		width: 100vw;
 		height: 100%;
 		min-height: 100vh;
-		background-image: linear-gradient(to bottom, transparent 0, transparent $height - 1px, hsl(180, 100, 80) $height - 1px, hsl(180, 100, 80) $height);
+		background-image: linear-gradient(to bottom, transparent 0, transparent $_height - 1px, hsl(180, 100, 80) $_height - 1px, hsl(180, 100, 80) $_height);
 		background-repeat: repeat-y;
 		background-position: 0 $baseline-grid-offset;
-		background-size: 100% $height;
+		background-size: 100% $_height;
 		content: '';
     z-index: -1;
 	}
 }
 
 /// Show highlight behind text
-/// @access private
 /// @group Typography
 @mixin highlight {
   background-color: rgba(255, 0, 255, 0.1);

@@ -16,7 +16,6 @@
 /// }
 @mixin rhythm-line-height($font-size, $base-font-size: null, $line-height: null) {
 
-	$em-base: 16px !default;
 	$base-font-size: $em-base !default;
 
 	$base-line-height: 1.4 !default;

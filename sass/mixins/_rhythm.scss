@@ -26,14 +26,12 @@
 /// }
 @mixin rhythm($property, $steps: 1, $offset: 0) {
 
-	$base-line-height: 1.4 !default;
-	$em-base: 16px !default;
-
 	$px-value: '';
 	$rem-value: '';
 
 	@each $step in $steps {
 		@if $offset > 0 {
+			$px-value  : #{$px-value} calc(#{$base-line-height * $step * $em-base} - #{$offset});
 			$px-value  : #{$px-value} calc(#{$base-line-height * $step * $em-base} - #{$offset});
 			$rem-value : #{$rem-value} calc(#{$step * $base-line-height}rem - #{$offset});
 		} @else {
