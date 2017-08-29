@@ -9,8 +9,6 @@
 /// @require {mixin} rhythm-line-height
 @mixin rhythm-font-size($scale: 0, $modular-scale-ratio: $modular-scale-ratio, $modular-scale-base: $modular-scale-base) {
 
-	$em-base: 16px !default;
-
 	@if function-exists(modular-scale) {
 		font-size: modular-scale($scale, $em-base);
 		font-size: modular-scale($scale, 1rem);
