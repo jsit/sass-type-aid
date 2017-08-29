@@ -34,6 +34,7 @@ $height: $em-base * $base-line-height;
 }
 
 /// Show highlight behind text
+/// @access private
 /// @group Typography
 @mixin highlight {
   background-color: rgba(255, 0, 255, 0.1);
