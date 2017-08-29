@@ -7,6 +7,17 @@
 /// @group Typography
 /// @require {mixin} modular-scale From [Bourbon](http://bourbon.io/)
 /// @require {mixin} rhythm-line-height
+/// @example scss - Sass
+/// h4 {
+///   @include rhythm-font-size(2);
+/// }
+/// @example css - Output
+/// h4 {
+///   font-size: 23.04px;
+///   font-size: 1.44rem;
+///   line-height: 1.80556;
+///   margin: 0;
+/// }
 @mixin rhythm-font-size($scale: 0, $modular-scale-ratio: $modular-scale-ratio, $modular-scale-base: $modular-scale-base) {
 
 	@if function-exists(modular-scale) {
