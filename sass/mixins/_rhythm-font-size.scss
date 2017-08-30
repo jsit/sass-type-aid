@@ -1,12 +1,13 @@
 /// Set font size and line height according to a modular scale.<br>
-/// Line height is set at the smallest line-height greater than 1.<br>
+/// Line height is set at the smallest line-height greater than
+/// `$min-line-height`.<br>
 /// `margin` is reset to `0`. Set with `rhythm()` or manually.
-/// @param {int} $scale [0] Scale
-/// @param {num} $modular-scale-ratio [0] Modular scale ratio
-/// @param {num} $modular-scale-base [0] Modular scale base
+/// @param {number} $scale [0] Scale
+/// @param {number} $modular-scale-ratio [0] Modular scale ratio
+/// @param {number} $modular-scale-base [0] Modular scale base
 /// @group 2typography
-/// @require {mixin} modular-scale From [Bourbon](http://bourbon.io/)
-/// @require {mixin} rhythm-line-height
+/// @require {mixin} modular-scale - From [Bourbon](http://bourbon.io/)
+/// @require {mixin} _rhythm-line-height
 /// @example scss - Sass
 /// h4 {
 ///   @include rhythm-font-size(2);
@@ -27,7 +28,7 @@
 		@error "Mixin 'modular-scale' not found; try importing Bourbon.";
 	}
 
-	@include rhythm-line-height(modular-scale($scale, $em-base));
+	@include _rhythm-line-height(modular-scale($scale, $em-base));
 
   margin: 0;
 

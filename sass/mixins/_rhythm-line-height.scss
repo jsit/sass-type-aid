@@ -1,9 +1,10 @@
 /// Set line height to be in rhythm with line height of base font size.<br>
 /// Line height is set at the smallest line-height greater than 1.<br>
-/// @param {px}  $font-size      Font size of element, in px
-/// @param {px}  $base-font-size Base font size, in px, if not set
-/// @param {num} $line-height    Base line height, in unitless, if not set
+/// @param {number} $font-size      Font size of element, in px
+/// @param {number} $base-font-size Base font size, in px, if not set
+/// @param {number} $line-height    Base line height, in unitless, if not set
 /// @group 2typography
+/// @access private
 /// @example scss - Sass
 /// h4 {
 ///   font-size: 24px;
@@ -14,7 +15,7 @@
 ///   font-size: 24px;
 ///   line-height: 1.1666666667;
 /// }
-@mixin rhythm-line-height($font-size, $base-font-size: null, $line-height: null) {
+@mixin _rhythm-line-height($font-size, $base-font-size: null, $line-height: null) {
 
 	$base-font-size: $em-base !default;
 
