@@ -2,11 +2,11 @@
 /// For instance:
 ///     @include rhythm(margin-bottom, 1)
 /// will add a margin-bottom 
-/// @param {string} $property Property to set, e.g. `margin-bottom`
-/// @param {number} $steps    Number of lines to use in measurement
-/// @param {number} $offset   Measurement to subtract from property value
-///                           (to offset, for instance, border widths)
-/// @group 2typography
+/// @param {string}     $property Property to set, e.g. `margin-bottom`
+/// @param {int | list} $steps    Number of lines to use in measurement
+/// @param {dist}       $offset   Measurement to subtract from property value
+///                               (to offset, for instance, border widths)
+/// @group Typography
 ///
 /// @example scss - Sass
 /// .element {
@@ -26,15 +26,20 @@
 /// }
 @mixin rhythm($property, $steps: 1, $offset: 0) {
 
+	$base-line-height: 1.4 !default;
+	$em-base: 16px !default;
+
 	$px-value: '';
 	$rem-value: '';
 
-	$px-value  : #{$px-value} $base-line-height * $steps * $em-base + $offset;
-
-	@if $offset != 0 {
-		$rem-value : #{$rem-value} calc(#{$steps * $base-line-height}rem + #{$offset});
-	} @else {
-		$rem-value : #{$rem-value} #{$steps * $base-line-height}rem;
+	@each $step in $steps {
+		@if $offset > 0 {
+			$px-value  : #{$px-value} calc(#{$base-line-height * $step * $em-base} - #{$offset});
+			$rem-value : #{$rem-value} calc(#{$step * $base-line-height}rem - #{$offset});
+		} @else {
+			$px-value  : #{$px-value} $base-line-height * $step * $em-base;
+			$rem-value : #{$rem-value} #{$step * $base-line-height}rem;
+		}
 	}
 
 	#{$property}: $px-value;
