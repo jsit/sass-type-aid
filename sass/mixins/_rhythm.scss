@@ -24,25 +24,49 @@
 ///   margin-top:  calc(22.4px - 2px);
 ///   margin-top:  calc(1.4rem - 2px);
 /// }
-@mixin rhythm($property, $steps: 1, $offset: 0) {
 
-	$base-line-height: 1.4 !default;
-	$em-base: 16px !default;
-
+@mixin _calc-props($property, $steps, $line-height, $offset) {
 	$px-value: '';
 	$rem-value: '';
+	$em-base: 16px !default;
 
 	@each $step in $steps {
-		@if $offset > 0 {
-			$px-value  : #{$px-value} calc(#{$base-line-height * $step * $em-base} - #{$offset});
-			$rem-value : #{$rem-value} calc(#{$step * $base-line-height}rem - #{$offset});
-		} @else {
-			$px-value  : #{$px-value} $base-line-height * $step * $em-base;
-			$rem-value : #{$rem-value} #{$step * $base-line-height}rem;
+		@if type-of($step) == 'string' {
+			$px-value: #{$px-value} $step;
+			$rem-value: #{$rem-value} $step;
+		}
+
+		@else {
+			@if $offset > 0 {
+				$px-value  : #{$px-value} calc(#{$line-height * $step * $em-base} - #{$offset});
+				$rem-value : #{$rem-value} calc(#{$step * $line-height}rem - #{$offset});
+			}
+
+			@else {
+				$px-value  : #{$px-value} $line-height * $step * $em-base;
+				$rem-value : #{$rem-value} #{$step * $line-height}rem;
+			}
 		}
 	}
 
 	#{$property}: $px-value;
 	#{$property}: $rem-value;
+}
 
+@mixin rhythm($property, $steps: 1, $offset: 0) {
+
+	$base-line-height: 1.4 !default;
+	$line-height: $base-line-height;
+
+	@include _calc-props($property, $steps, $line-height, $offset);
+
+	@if $responsive-line-heights {
+		@each $lh in $responsive-line-heights {
+			@media all and (#{nth($lh, 1)}) {
+				$line-height: nth($lh, 2);
+
+				@include _calc-props($property, $steps, $line-height, $offset);
+			}
+		}
+	}
 }
